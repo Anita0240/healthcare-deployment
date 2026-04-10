@@ -7,7 +7,7 @@ resource "aws_security_group" "django_sg" {
   name        = "django-sg"
   description = "Allow SSH and HTTP for Django"
 
-  # SSH access
+  # SSH access   
   ingress {
     from_port   = 22
     to_port     = 22
