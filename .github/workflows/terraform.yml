@@ -26,8 +26,8 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
-        working-directory: ./terraform
+        working-directory: .
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        working-directory: ./terraform
+        working-directory: .
