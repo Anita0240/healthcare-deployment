@@ -35,7 +35,7 @@ resource "aws_security_group" "django_sg" {
 # 2. EC2 Instance (Virtual Machine)
 resource "aws_instance" "django_server" {
   ami           = "ami-0dee22c13ea7a9a67" # Ubuntu 22.04 LTS in Mumbai
-  instance_type = "t2.micro"             # Free tier eligible
+  instance_type = "t3.micro"             # Free tier eligible
   
   # Security group attach karna
   vpc_security_group_ids = [aws_security_group.django_sg.id]
