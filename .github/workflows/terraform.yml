@@ -19,7 +19,17 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-
+        run: |
+          # Pehle check karo folder hai ya nahi
+          if [ -d "terraform" ]; then
+            cd terraform && terraform init
+          elif [ -d "Doctor_Ai/terraform" ]; then
+            cd Doctor_Ai/terraform && terraform init
+          else
+            echo "Folder not found! Listing files for debug:"
+            ls -R
+            exit 1
+          fi
       - name: Terraform Init
         run: terraform init
         working-directory: Doctor_Ai/terraform
